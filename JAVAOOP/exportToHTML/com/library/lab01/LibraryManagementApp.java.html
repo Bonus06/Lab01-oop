@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>LibraryManagementApp.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+.s4 { color: #2aacb8;}
+.s5 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+LibraryManagementApp.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">library</span><span class="s2">.</span><span class="s1">lab01</span><span class="s2">;</span>
+
+<span class="s0">public class </span><span class="s1">LibraryManagementApp </span><span class="s2">{</span>
+    <span class="s0">public static void </span><span class="s1">main</span><span class="s2">(</span><span class="s1">String</span><span class="s2">[] </span><span class="s1">args</span><span class="s2">) {</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">&quot; </span><span class="s2">+ </span><span class="s3">&quot;=&quot;</span><span class="s2">.</span><span class="s1">repeat</span><span class="s2">(</span><span class="s4">60</span><span class="s2">));</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot; LIBRARY MANAGEMENT SYSTEM - DEMONSTRATION&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;=&quot;</span><span class="s2">.</span><span class="s1">repeat</span><span class="s2">(</span><span class="s4">60</span><span class="s2">));</span>
+
+        <span class="s5">// Instantiate two book objects based on the provided raw data</span>
+        <span class="s1">Book book1 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Book</span><span class="s2">(</span><span class="s3">&quot;Java Programming&quot;</span><span class="s2">, </span><span class="s3">&quot;John Smith&quot;</span><span class="s2">, </span><span class="s3">&quot;123-456&quot;</span><span class="s2">, </span><span class="s4">450.0</span><span class="s2">, </span><span class="s3">&quot;Available&quot;</span><span class="s2">);</span>
+        <span class="s1">Book book2 </span><span class="s2">= </span><span class="s0">new </span><span class="s1">Book</span><span class="s2">(</span><span class="s3">&quot;OOP Concepts&quot;</span><span class="s2">, </span><span class="s3">&quot;Will Jones&quot;</span><span class="s2">, </span><span class="s3">&quot;999-888&quot;</span><span class="s2">, </span><span class="s4">590.0</span><span class="s2">, </span><span class="s3">&quot;Available&quot;</span><span class="s2">);</span>
+
+        <span class="s5">// Display initial details of both books</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">--- Initial Book Information ---&quot;</span><span class="s2">);</span>
+        <span class="s1">book1</span><span class="s2">.</span><span class="s1">displayDetails</span><span class="s2">();</span>
+        <span class="s1">book2</span><span class="s2">.</span><span class="s1">displayDetails</span><span class="s2">();</span>
+
+        <span class="s5">// Demonstrate checkOut() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">--- Testing checkOut() Method ---&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Attempting to checkout Book 1 and Book 2 (Available):&quot;</span><span class="s2">);</span>
+        <span class="s1">book1</span><span class="s2">.</span><span class="s1">checkout</span><span class="s2">();</span>
+        <span class="s1">book2</span><span class="s2">.</span><span class="s1">checkout</span><span class="s2">();</span>
+
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Attempting to checkout Book 2 again (Already Borrowed):&quot;</span><span class="s2">);</span>
+        <span class="s1">book2</span><span class="s2">.</span><span class="s1">checkout</span><span class="s2">();</span>
+
+        <span class="s5">// Challenge: Attempt to checkout a book that is already borrowed</span>
+<span class="s5">// Demonstrate returnBook() method</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">--- Testing returnBook() Method ---&quot;</span><span class="s2">);</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">Returning Book 1:&quot;</span><span class="s2">);</span>
+        <span class="s1">book1</span><span class="s2">.</span><span class="s1">returnBook</span><span class="s2">();</span>
+
+        <span class="s5">// Display final details</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">(</span><span class="s3">&quot;</span><span class="s0">\n</span><span class="s3">--- Final Book Information ---&quot;</span><span class="s2">);</span>
+        <span class="s1">book1</span><span class="s2">.</span><span class="s1">displayDetails</span><span class="s2">();</span>
+        <span class="s1">System</span><span class="s2">.</span><span class="s1">out</span><span class="s2">.</span><span class="s1">println</span><span class="s2">();</span>
+        <span class="s1">book2</span><span class="s2">.</span><span class="s1">displayDetails</span><span class="s2">();</span>
+    <span class="s2">}</span>
+
+<span class="s2">}</span>
+</pre>
+</body>
+</html>
